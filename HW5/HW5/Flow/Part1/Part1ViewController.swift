@@ -11,37 +11,39 @@ class Part1ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let networkService: Networkp1Service
-    let urlString: String
-    var collectionData: [SomeObject] = [] {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
-    
-    init(service: Networkp1Service, urlStr: String) {
-        self.networkService = service
-        self.urlString = urlStr
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        print("Do required init")
-        self.networkService = Networkp1ServiceImp()
-        self.urlString = URL_StringForFetchP1
-        super.init(coder: coder)
-    }
+    var viewModel: Part1ViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-
+        
     }
     
-    func loadData(string: String) async {
-        collectionData = await networkService.fetchData(urlString: string)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        loadInViewModel()
     }
+    
+    func loadInViewModel() {
+        Task {
+            do {
+                await self.viewModel?.handleViewReady()
+                viewModel?.itemsChanged = { [unowned self] in
+                    self.collectionView.reloadData()
+                }
+            } catch {
+                print("Error")
+            }
+            
+        }
+    }
+    
+    func configure(viewModel: Part1ViewModel) {
+        self.viewModel = viewModel
+    }
+
     
 
    
@@ -50,15 +52,18 @@ class Part1ViewController: UIViewController {
 
 extension Part1ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionData.count
+        return viewModel?.numberOfItems ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Part1CollectionViewCell.reusableCellIdentifier, for: indexPath) as? Part1CollectionViewCell else {
             return UICollectionViewCell()
         }
-        let celldata = collectionData[indexPath.row]
+        print("prepare cell")
+        if let celldata = viewModel?.item(index: indexPath.row) {
         cell.configureUI(id: celldata.id, name: celldata.name, email: celldata.email)
+            print("cell configure ", celldata)
+        }
         return cell
     }
     

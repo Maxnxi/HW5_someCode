@@ -19,6 +19,7 @@
 		05ABA35F28B7D803008AAA30 /* ServerP1Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA35E28B7D803008AAA30 /* ServerP1Response.swift */; };
 		05ABA36128B7DBB0008AAA30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA36028B7DBB0008AAA30 /* Constants.swift */; };
 		05ABA36428B7DE2B008AAA30 /* Part1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA36328B7DE2B008AAA30 /* Part1CollectionViewCell.swift */; };
+		05ABA36728B7E37F008AAA30 /* Part1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA36628B7E37F008AAA30 /* Part1ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		05ABA35E28B7D803008AAA30 /* ServerP1Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerP1Response.swift; sourceTree = "<group>"; };
 		05ABA36028B7DBB0008AAA30 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05ABA36328B7DE2B008AAA30 /* Part1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1CollectionViewCell.swift; sourceTree = "<group>"; };
+		05ABA36628B7E37F008AAA30 /* Part1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		05ABA35828B7D646008AAA30 /* Part1 */ = {
 			isa = PBXGroup;
 			children = (
+				05ABA36528B7E36F008AAA30 /* ViewModel */,
 				05ABA36228B7DE0B008AAA30 /* View */,
 				05ABA35D28B7D7E6008AAA30 /* Entity */,
 				05ABA35C28B7D7E0008AAA30 /* Service */,
@@ -139,6 +142,14 @@
 				05ABA36328B7DE2B008AAA30 /* Part1CollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		05ABA36528B7E36F008AAA30 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05ABA36628B7E37F008AAA30 /* Part1ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 				05ABA35F28B7D803008AAA30 /* ServerP1Response.swift in Sources */,
 				05ABA36428B7DE2B008AAA30 /* Part1CollectionViewCell.swift in Sources */,
 				05ABA36128B7DBB0008AAA30 /* Constants.swift in Sources */,
+				05ABA36728B7E37F008AAA30 /* Part1ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
