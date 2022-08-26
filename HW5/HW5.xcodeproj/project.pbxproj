@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052DEA0228B8BA3C00A292E3 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DEA0128B8BA3C00A292E3 /* NetworkClient.swift */; };
+		052DEA0428B8BA4400A292E3 /* ItemP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DEA0328B8BA4400A292E3 /* ItemP2.swift */; };
+		052DEA4C28B8BCA900A292E3 /* HW5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DEA4B28B8BCA900A292E3 /* HW5Tests.swift */; };
+		052DEA5528B8BCFC00A292E3 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DEA5428B8BCFC00A292E3 /* MockNetworkClient.swift */; };
 		05ABA33F28B7CEF9008AAA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA33E28B7CEF9008AAA30 /* AppDelegate.swift */; };
 		05ABA34128B7CEF9008AAA30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA34028B7CEF9008AAA30 /* SceneDelegate.swift */; };
 		05ABA34328B7CEF9008AAA30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA34228B7CEF9008AAA30 /* ViewController.swift */; };
@@ -22,7 +26,22 @@
 		05ABA36728B7E37F008AAA30 /* Part1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABA36628B7E37F008AAA30 /* Part1ViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		052DEA4D28B8BCA900A292E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05ABA33328B7CEF9008AAA30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05ABA33A28B7CEF9008AAA30;
+			remoteInfo = HW5;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		052DEA0128B8BA3C00A292E3 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		052DEA0328B8BA4400A292E3 /* ItemP2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemP2.swift; sourceTree = "<group>"; };
+		052DEA4928B8BCA900A292E3 /* HW5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HW5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		052DEA4B28B8BCA900A292E3 /* HW5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW5Tests.swift; sourceTree = "<group>"; };
+		052DEA5428B8BCFC00A292E3 /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 		05ABA33B28B7CEF9008AAA30 /* HW5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ABA33E28B7CEF9008AAA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ABA34028B7CEF9008AAA30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +60,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		052DEA4628B8BCA900A292E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05ABA33828B7CEF9008AAA30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,10 +77,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052DE9FF28B8BA2700A292E3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				052DEA0328B8BA4400A292E3 /* ItemP2.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		052DEA0028B8BA3000A292E3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				052DEA0128B8BA3C00A292E3 /* NetworkClient.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		052DEA4A28B8BCA900A292E3 /* HW5Tests */ = {
+			isa = PBXGroup;
+			children = (
+				052DEA5328B8BCDC00A292E3 /* testNetworkClien */,
+				052DEA4B28B8BCA900A292E3 /* HW5Tests.swift */,
+			);
+			path = HW5Tests;
+			sourceTree = "<group>";
+		};
+		052DEA5328B8BCDC00A292E3 /* testNetworkClien */ = {
+			isa = PBXGroup;
+			children = (
+				052DEA5428B8BCFC00A292E3 /* MockNetworkClient.swift */,
+			);
+			path = testNetworkClien;
+			sourceTree = "<group>";
+		};
 		05ABA33228B7CEF9008AAA30 = {
 			isa = PBXGroup;
 			children = (
 				05ABA33D28B7CEF9008AAA30 /* HW5 */,
+				052DEA4A28B8BCA900A292E3 /* HW5Tests */,
 				05ABA33C28B7CEF9008AAA30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				05ABA33B28B7CEF9008AAA30 /* HW5.app */,
+				052DEA4928B8BCA900A292E3 /* HW5Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +175,8 @@
 		05ABA35928B7D64B008AAA30 /* Part2 */ = {
 			isa = PBXGroup;
 			children = (
+				052DEA0028B8BA3000A292E3 /* Service */,
+				052DE9FF28B8BA2700A292E3 /* Entity */,
 				05ABA35528B7D63D008AAA30 /* Part2ViewController.swift */,
 			);
 			path = Part2;
@@ -155,6 +218,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		052DEA4828B8BCA900A292E3 /* HW5Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 052DEA4F28B8BCA900A292E3 /* Build configuration list for PBXNativeTarget "HW5Tests" */;
+			buildPhases = (
+				052DEA4528B8BCA900A292E3 /* Sources */,
+				052DEA4628B8BCA900A292E3 /* Frameworks */,
+				052DEA4728B8BCA900A292E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				052DEA4E28B8BCA900A292E3 /* PBXTargetDependency */,
+			);
+			name = HW5Tests;
+			productName = HW5Tests;
+			productReference = 052DEA4928B8BCA900A292E3 /* HW5Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		05ABA33A28B7CEF9008AAA30 /* HW5 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05ABA34F28B7CF00008AAA30 /* Build configuration list for PBXNativeTarget "HW5" */;
@@ -182,6 +263,10 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					052DEA4828B8BCA900A292E3 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 05ABA33A28B7CEF9008AAA30;
+					};
 					05ABA33A28B7CEF9008AAA30 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -201,11 +286,19 @@
 			projectRoot = "";
 			targets = (
 				05ABA33A28B7CEF9008AAA30 /* HW5 */,
+				052DEA4828B8BCA900A292E3 /* HW5Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		052DEA4728B8BCA900A292E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05ABA33928B7CEF9008AAA30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +312,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		052DEA4528B8BCA900A292E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052DEA4C28B8BCA900A292E3 /* HW5Tests.swift in Sources */,
+				052DEA5528B8BCFC00A292E3 /* MockNetworkClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05ABA33728B7CEF9008AAA30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,13 +332,23 @@
 				05ABA34128B7CEF9008AAA30 /* SceneDelegate.swift in Sources */,
 				05ABA35428B7D631008AAA30 /* Part1ViewController.swift in Sources */,
 				05ABA35F28B7D803008AAA30 /* ServerP1Response.swift in Sources */,
+				052DEA0428B8BA4400A292E3 /* ItemP2.swift in Sources */,
 				05ABA36428B7DE2B008AAA30 /* Part1CollectionViewCell.swift in Sources */,
 				05ABA36128B7DBB0008AAA30 /* Constants.swift in Sources */,
+				052DEA0228B8BA3C00A292E3 /* NetworkClient.swift in Sources */,
 				05ABA36728B7E37F008AAA30 /* Part1ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		052DEA4E28B8BCA900A292E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05ABA33A28B7CEF9008AAA30 /* HW5 */;
+			targetProxy = 052DEA4D28B8BCA900A292E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		05ABA34428B7CEF9008AAA30 /* Main.storyboard */ = {
@@ -258,6 +370,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		052DEA5028B8BCA900A292E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnxi.HW5Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HW5.app/HW5";
+			};
+			name = Debug;
+		};
+		052DEA5128B8BCA900A292E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnxi.HW5Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HW5.app/HW5";
+			};
+			name = Release;
+		};
 		05ABA34D28B7CF00008AAA30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -429,6 +575,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		052DEA4F28B8BCA900A292E3 /* Build configuration list for PBXNativeTarget "HW5Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				052DEA5028B8BCA900A292E3 /* Debug */,
+				052DEA5128B8BCA900A292E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		05ABA33628B7CEF9008AAA30 /* Build configuration list for PBXProject "HW5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

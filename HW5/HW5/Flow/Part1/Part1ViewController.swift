@@ -22,31 +22,21 @@ class Part1ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         loadInViewModel()
     }
     
     func loadInViewModel() {
-        Task {
-            do {
-                await self.viewModel?.handleViewReady()
-                viewModel?.itemsChanged = { [unowned self] in
-                    self.collectionView.reloadData()
-                }
-            } catch {
-                print("Error")
+        self.viewModel?.handleViewReady()
+        viewModel?.itemsChanged = { [unowned self] in
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
-            
         }
     }
     
     func configure(viewModel: Part1ViewModel) {
         self.viewModel = viewModel
     }
-
-    
-
-   
 
 }
 
@@ -66,7 +56,23 @@ extension Part1ViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         return cell
     }
+}
+
+extension Part1ViewController: UICollectionViewDelegateFlowLayout {
     
-    
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            return UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        }
+
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            let collectionViewWidth = collectionView.bounds.width
+            return CGSize(width: collectionViewWidth/3, height: collectionViewWidth/3)
+        }
+
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 0
+        }
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 20
+        }    
 }

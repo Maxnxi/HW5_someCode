@@ -11,12 +11,15 @@ protocol Part1ViewModel{
     var numberOfItems: Int { get }
     func item(index: Int) -> SomeObject
     var itemsChanged: (() -> ())? { get set }
-    func handleViewReady() async
+    func handleViewReady()
     
 }
 
 class Part1ViewModelImp: Part1ViewModel {
 
+    private var semaphore = DispatchSemaphore(value: 1)
+    private let custQueue = DispatchQueue(label: "fetchData")
+    
     private let networkService: Networkp1Service
     private let urlString: String
     
@@ -44,9 +47,13 @@ class Part1ViewModelImp: Part1ViewModel {
     
     var itemsChanged: (() -> ())?
     
-    func handleViewReady() async {
-        self.someObjectArray = await fetchDataFromServer()
-        await self.itemsChanged?()
+    func handleViewReady() {
+        self.custQueue.async {
+            Task{
+                self.someObjectArray = await self.fetchDataFromServer()
+            }
+            self.itemsChanged?()
+        }
     }
     
     private func fetchDataFromServer() async -> [SomeObject] {
